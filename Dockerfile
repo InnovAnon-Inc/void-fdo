@@ -39,7 +39,7 @@ ENV ARCH="$ARCH"
 ENV CPPFLAGS="-DUSE_ASM $CPPFLAGS"
 ENV   CFLAGS="-march=$ARCH -mtune=$ARCH $CFLAGS"
 
-# PGO
+# FDO
 ENV   CFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile-abs-path -fprofile-arcs -fprofile-dir=/var/cpuminer $CFLAGS"
 ENV  LDFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile-abs-path -fprofile-arcs -fprofile-dir=/var/cpuminer $LDFLAGS"
 
@@ -48,7 +48,7 @@ ENV CPPFLAGS="-DNDEBUG $CPPFLAGS"
 ENV   CFLAGS="-Ofast -g0 $CFLAGS"
 
 # Static
-ENV  LDFLAGS="-static -static-libgcc -static-libstdc++ $LDFLAGS"
+ENV  LDFLAGS="$LDFLAGS -static -static-libgcc -static-libstdc++"
 
 # LTO
 ENV   CFLAGS="-fuse-linker-plugin -flto $CFLAGS"
