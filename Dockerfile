@@ -5,7 +5,7 @@ ARG   CFLAGS
 ARG CXXFLAGS
 ARG  LDFLAGS
 
-ENV CHOST=x86_64-linux-gnu
+ENV CHOST=x86_64-linux-musl
 ENV CC=$CHOST-gcc
 ENV CXX=$CHOST-g++
 ENV FC=$CHOST-gfortran
