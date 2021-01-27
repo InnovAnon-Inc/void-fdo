@@ -37,16 +37,16 @@ ENV PKG_CONFIG_PATH="$PREFIX/share/pkgconfig:$PKG_CONFIG_LIBDIR:$PKG_CONFIG_PATH
 ARG ARCH=native
 ENV ARCH="$ARCH"
 
-ENV CPPFLAGS="-DUSE_ASM $CPPFLAGS"
-ENV   CFLAGS="-march=$ARCH -mtune=$ARCH $CFLAGS"
+#ENV CPPFLAGS="-DUSE_ASM $CPPFLAGS"
+#ENV   CFLAGS="-march=$ARCH -mtune=$ARCH $CFLAGS"
 
 # FDO
 #ENV   CFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile-abs-path -fprofile-arcs -fprofile-dir=/var/cpuminer $CFLAGS"
 #ENV  LDFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile-abs-path -fprofile-arcs -fprofile-dir=/var/cpuminer $LDFLAGS"
 
 # Debug
-ENV CPPFLAGS="-DNDEBUG $CPPFLAGS"
-ENV   CFLAGS="-Ofast -g0 $CFLAGS"
+#ENV CPPFLAGS="-DNDEBUG $CPPFLAGS"
+#ENV   CFLAGS="-Ofast -g0 $CFLAGS"
 
 # Static
 ENV  LDFLAGS="$LDFLAGS -static -static-libgcc -static-libstdc++"
@@ -63,8 +63,8 @@ ENV  LDFLAGS="$LDFLAGS -static -static-libgcc -static-libstdc++"
 ##ENV  LDFLAGS="-Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
 
 # Optimize
-ENV   CLANGFLAGS="-ffast-math -fassociative-math -freciprocal-math -fmerge-all-constants $CFLAGS"
-ENV       CFLAGS="-fipa-pta -floop-nest-optimize -fgraphite-identity -floop-parallelize-all $CLANGFLAGS"
+#ENV   CLANGFLAGS="-ffast-math -fassociative-math -freciprocal-math -fmerge-all-constants $CFLAGS"
+#ENV       CFLAGS="-fipa-pta -floop-nest-optimize -fgraphite-identity -floop-parallelize-all $CLANGFLAGS"
 
 ENV CLANGXXFLAGS="$CLANGFLAGS $CXXFLAGS"
 ENV CXXFLAGS="$CFLAGS $CXXFLAGS"
