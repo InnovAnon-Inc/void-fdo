@@ -52,15 +52,15 @@ ENV   CFLAGS="-Ofast -g0 $CFLAGS"
 ENV  LDFLAGS="$LDFLAGS -static -static-libgcc -static-libstdc++"
 
 # LTO
-ENV   CFLAGS="-fuse-linker-plugin -flto $CFLAGS"
-ENV  LDFLAGS="-fuse-linker-plugin -flto $LDFLAGS"
-#ENV   CFLAGS="-fuse-linker-plugin -flto -ffat-lto-objects $CFLAGS"
-#ENV  LDFLAGS="-fuse-linker-plugin -flto -ffat-lto-objects $LDFLAGS"
+#ENV   CFLAGS="-fuse-linker-plugin -flto $CFLAGS"
+#ENV  LDFLAGS="-fuse-linker-plugin -flto $LDFLAGS"
+##ENV   CFLAGS="-fuse-linker-plugin -flto -ffat-lto-objects $CFLAGS"
+##ENV  LDFLAGS="-fuse-linker-plugin -flto -ffat-lto-objects $LDFLAGS"
 
 # Dead Code Strip
-ENV   CFLAGS="-ffunction-sections -fdata-sections $CFLAGS"
-ENV  LDFLAGS="-Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
-#ENV  LDFLAGS="-Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
+#ENV   CFLAGS="-ffunction-sections -fdata-sections $CFLAGS"
+#ENV  LDFLAGS="-Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
+##ENV  LDFLAGS="-Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
 
 # Optimize
 ENV   CLANGFLAGS="-ffast-math -fassociative-math -freciprocal-math -fmerge-all-constants $CFLAGS"
