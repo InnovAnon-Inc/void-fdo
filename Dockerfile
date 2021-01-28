@@ -41,8 +41,10 @@ ENV CPPFLAGS="-DUSE_ASM $CPPFLAGS"
 ENV   CFLAGS="-march=$ARCH -mtune=$ARCH $CFLAGS"
 
 # FDO
-ENV   CFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile -fprofile-arcs  $CFLAGS"
-ENV  LDFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile -fprofile-arcs $LDFLAGS"
+#ENV   CFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile -fprofile-arcs  $CFLAGS"
+#ENV  LDFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile -fprofile-arcs $LDFLAGS"
+ENV   CFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile-arcs  $CFLAGS"
+ENV  LDFLAGS="-fipa-profile -fprofile-reorder-functions -fvpt -fprofile-arcs $LDFLAGS"
 
 # Debug
 ENV CPPFLAGS="-DNDEBUG $CPPFLAGS"
